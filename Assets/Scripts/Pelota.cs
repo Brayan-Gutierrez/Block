@@ -8,26 +8,21 @@ public class Pelota : MonoBehaviour
     public Rigidbody rig;
     bool enJuego = false;
     Vector3 posicionInicial;
-    Transform barra;
+    public Transform barra;
 
-    void Awake() {
-
-        rig = GetComponent<Rigidbody>();
-        barra = GetComponentInParent<Transform>();
-        
-    }
-    // Start is called before the first frame update
     void Start()//guarda la posicion incial para resetear
     {
         posicionInicial = transform.position;
     }
-
+    
     public void Reset(){//resetea la posicion inicial del objeto
         transform.position = posicionInicial;
         transform.SetParent(barra);
         enJuego = false;
         DetenerMovimienton();
     }
+
+    // Start is called before the first frame update
 
     public void DetenerMovimienton(){
         rig.isKinematic = true;
