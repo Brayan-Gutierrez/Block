@@ -5,11 +5,13 @@ using UnityEngine;
 public class Bloques : MonoBehaviour
 {
     public GameObject efectoParticulas;
+    public Puntos puntos;
 
     //Is Trigger DESACTIVADO
     void OnCollisionEnter(){
         Instantiate(efectoParticulas, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        puntos.GanarPunto();
     }
 
     //Is Trigger ACTIVADO
