@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class BotonSalir : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool salir;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)){
-            
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (salir)
+            {
+                Debug.Log("Salimos del juego");
+                Application.Quit();
+            }else
+            {
+                Application.LoadLevel("Portada");
+            }
         }
         
     }
