@@ -10,6 +10,9 @@ public class Vidas : MonoBehaviour
     public Text textoVidas;
     public Pelota pelota;
     public Barra barra;
+
+    public GameObject gameOver;
+    public SiguienteNivel siguienteNivel;
     void Start()
     {
         textoVidas.text = "Vidas: " + Vidas.vidas;
@@ -20,10 +23,26 @@ public class Vidas : MonoBehaviour
     }
 
     public void PerderVida(){
-        Vidas.vidas--;
-        ActualizarMarcadorVidas();
-        barra.Reset();
-        pelota.Reset();
-    }
+        if (vidas <=0 ) return;
 
+        Vidas.vidas --;
+        ActualizarMarcadorVidas();
+
+        if (vidas <= 0){
+
+            //Mostraremos GameOver
+            gameOver.SetActive(true);
+            pelota.DetenerMovimiento();
+            barra.enabled = false;
+
+            siguienteNivel.nivelCargar = "Portada";
+            siguienteNivel.ActivarCarga();
+        }
+        else{
+
+            barra.Reset();
+            pelota.Reset();
+    
+        }
+    }
 }

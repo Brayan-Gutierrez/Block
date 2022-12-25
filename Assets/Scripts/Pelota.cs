@@ -19,12 +19,12 @@ public class Pelota : MonoBehaviour
         transform.position = posicionInicial;
         transform.SetParent(barra);
         enJuego = false;
-        DetenerMovimienton();
+        DetenerMovimiento();
     }
 
     // Start is called before the first frame update
 
-    public void DetenerMovimienton(){
+    public void DetenerMovimiento(){
         rig.isKinematic = true;
         rig.velocity = Vector3.zero;
     }
