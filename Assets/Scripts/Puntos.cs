@@ -7,6 +7,17 @@ public class Puntos : MonoBehaviour
 {
     public static int puntos = 0;
     public Text textoPunto;
+
+    public GameObject nivelCompletado;
+    public GameObject juegoCompletado;
+
+    public SiguienteNivel siguienteNivel;
+
+    public Pelota pelota;
+    public Barra barra;
+
+    public Transform contenedorBloques;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +33,20 @@ public class Puntos : MonoBehaviour
     {
         Puntos.puntos++;
         ActualizarMarcadorPuntos();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (contenedorBloques.childCount <= 0 ){
+            pelota.DetenerMovimiento();
+            barra.enabled = false;
+
+            if (siguienteNivel.EsUltimoNivel()){
+
+                juegoCompletado.SetActive(true);
+            }
+            else{
+
+                nivelCompletado.SetActive(true);
+            }
+        }
     }
+    
 }

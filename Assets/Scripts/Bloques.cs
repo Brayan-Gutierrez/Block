@@ -11,6 +11,7 @@ public class Bloques : MonoBehaviour
     void OnCollisionEnter(){
         Instantiate(efectoParticulas, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        transform.SetParent(null);
         puntos.GanarPunto();
     }
 
