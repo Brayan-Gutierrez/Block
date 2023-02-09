@@ -8,6 +8,13 @@ public class SonidosPelota : MonoBehaviour
     public AudioSource punto;
 
     void OnCollisionEnter(Collision otro) {
-       // otro.GameObject
+        if (otro.gameObject.CompareTag("Bloque"))
+        {
+            punto.Play();
+        }
+        else
+        {
+            rebote.Play();
+        }
     }
 }

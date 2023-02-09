@@ -10,9 +10,10 @@ public class Vidas : MonoBehaviour
     public Text textoVidas;
     public Pelota pelota;
     public Barra barra;
-
     public GameObject gameOver;
     public SiguienteNivel siguienteNivel;
+    public SonidosFinPartida sonidosFinPartida;
+
     void Start()
     {
         textoVidas.text = "Vidas: " + Vidas.vidas;
@@ -31,6 +32,7 @@ public class Vidas : MonoBehaviour
         if (vidas <= 0){
 
             //Mostraremos GameOver
+            sonidosFinPartida.GameOver();
             gameOver.SetActive(true);
             pelota.DetenerMovimiento();
             barra.enabled = false;

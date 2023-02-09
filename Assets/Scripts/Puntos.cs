@@ -17,6 +17,7 @@ public class Puntos : MonoBehaviour
     public Barra barra;
 
     public Transform contenedorBloques;
+    public SonidosFinPartida sonidosFinPartida;
 
     // Start is called before the first frame update
     void Start()
@@ -42,10 +43,14 @@ public class Puntos : MonoBehaviour
 
                 juegoCompletado.SetActive(true);
             }
-            else{
-
+            else
+            {
                 nivelCompletado.SetActive(true);
             }
+
+            sonidosFinPartida.NivelCompletado();
+            
+            siguienteNivel.ActivarCarga();
         }
     }
     
