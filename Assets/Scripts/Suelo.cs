@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Suelo : MonoBehaviour
 {
+    public AudioSource error;
     public Vidas vidas;
-   void OnTriggerEnter(){
+    void OnTriggerEnter(){
        vidas.PerderVida();
+       error.Play();
    }
 
 /*   void OnCollisionEnter(){
         Debug.Log("Pelota");
     }*/
+
 }
