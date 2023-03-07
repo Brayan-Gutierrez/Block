@@ -10,6 +10,8 @@ public class Pelota : MonoBehaviour
     Vector3 posicionInicial;
     public Transform barra;
 
+    public ElementoInteractivo pantalla;
+
     void Start()//guarda la posicion incial para resetear
     {
         posicionInicial = transform.position;
@@ -32,7 +34,7 @@ public class Pelota : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!enJuego && Input.GetButtonUp("Fire1")){
+        if(!enJuego && (Input.GetButtonUp("Fire1") || pantalla.pulsado)){
             enJuego = true;
             transform.SetParent(null);
             rig.isKinematic = false;

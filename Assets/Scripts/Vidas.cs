@@ -16,11 +16,11 @@ public class Vidas : MonoBehaviour
 
     void Start()
     {
-        textoVidas.text = "Vidas: " + Vidas.vidas;
+        textoVidas.text = "X " + Vidas.vidas;
     }
 
     void ActualizarMarcadorVidas(){
-        textoVidas.text = "Vidas: " + Vidas.vidas;
+        textoVidas.text = "X " + Vidas.vidas;
     }
 
     public void PerderVida(){
