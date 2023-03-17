@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Pelota : MonoBehaviour
 {
-    public float velocidadInicial = 600f;
+    public float velocidadPelota = 600f;
     public Rigidbody rig;
     bool enJuego = false;
     Vector3 posicionInicial;
     public Transform barra;
+    float velocidadInicial;
 
     public ElementoInteractivo pantalla;
 
     void Start()//guarda la posicion incial para resetear
     {
         posicionInicial = transform.position;
+        velocidadInicial = velocidadPelota;
+        
     }
     
     public void Reset(){//resetea la posicion inicial del objeto
@@ -34,11 +37,14 @@ public class Pelota : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(velocidadInicial> velocidadPelota) {
+            velocidadPelota=velocidadInicial;
+        } 
         if(!enJuego && (Input.GetButtonUp("Fire1") || pantalla.pulsado)){
             enJuego = true;
             transform.SetParent(null);
             rig.isKinematic = false;
-            rig.AddForce(new Vector3(velocidadInicial,velocidadInicial,0));
+            rig.AddForce(new Vector3(velocidadPelota,velocidadPelota,0));
         }
     }
 }

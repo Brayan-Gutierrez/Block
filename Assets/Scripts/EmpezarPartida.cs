@@ -14,6 +14,7 @@ public class EmpezarPartida : MonoBehaviour
             Puntos.puntos = 0;
             Vidas.vidas = 3;
             Application.LoadLevel("Level01");
+            Time.timeScale = 1;
         }
     }
 }

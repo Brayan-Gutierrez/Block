@@ -4265,8 +4265,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5ffc65c5e45b39246bb95da47119ac9b, type: 3}
-    m_FontSize: 120
+    m_Font: {fileID: 12800000, guid: 660b129132194a94e907ef25028a9387, type: 3}
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -4277,7 +4277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: BLOCK'S!!
+  m_Text: Breack Ball
 --- !u!222 &2002155807
 CanvasRenderer:
   m_ObjectHideFlags: 0
