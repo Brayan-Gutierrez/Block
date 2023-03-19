@@ -6,6 +6,14 @@ public class Bloques : MonoBehaviour
 {
     public GameObject efectoParticulas;
     public Puntos puntos;
+    //public Transform BloquesTrans;
+    Vector3 posicionInicial;
+
+    void Start() {
+        posicionInicial.Set(Random.Range(-14.5f,14.5f),Random.Range(-5f,8.5f),0);
+        transform.position=posicionInicial;
+         
+    }
 
     //Is Trigger DESACTIVADO
     void OnCollisionEnter(){
