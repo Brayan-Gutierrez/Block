@@ -8,11 +8,14 @@ public class Bloques : MonoBehaviour
     public Puntos puntos;
     //public Transform BloquesTrans;
     Vector3 posicionInicial;
+    public GameObject gestor;
 
     void Start() {
         posicionInicial.Set(Random.Range(-14.5f,14.5f),Random.Range(-5f,8.5f),0);
         transform.position=posicionInicial;
-         
+
+        gestor = GameObject.Find("GestorDelJuego");
+        puntos = (Puntos)gestor.GetComponent("Puntos");
     }
 
     //Is Trigger DESACTIVADO

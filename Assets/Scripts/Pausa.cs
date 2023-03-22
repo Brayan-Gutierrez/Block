@@ -5,12 +5,6 @@ using UnityEngine.EventSystems;
 
 public class Pausa : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public void OnPointerDown(PointerEventData eventData)
     {
         if(Time.timeScale==1) {
@@ -21,14 +15,9 @@ public class Pausa : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
+    //Sirve para detectar cuando se deja de pulsar
     public void OnPointerUp(PointerEventData eventData)
     {
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
 }
