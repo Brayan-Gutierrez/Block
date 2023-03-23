@@ -6,7 +6,6 @@ public class Bloques : MonoBehaviour
 {
     public GameObject efectoParticulas;
     public Puntos puntos;
-    //public Transform BloquesTrans;
     Vector3 posicionInicial;
     public GameObject gestor;
 
