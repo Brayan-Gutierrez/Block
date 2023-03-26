@@ -11,8 +11,7 @@ public class Barra : MonoBehaviour
     public ElementoInteractivo botonIzquierdo;
     public ElementoInteractivo botonDerecho;
     float direccion;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         posicionInicial = transform.position;

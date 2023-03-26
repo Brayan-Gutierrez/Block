@@ -6,20 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ReiniciarNivel : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Puntos puntos;
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        puntos.PuntosReinicio();
         SceneManager.LoadScene("Level01");
         Time.timeScale = 1;
     }

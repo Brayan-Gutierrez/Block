@@ -14,6 +14,8 @@ public class Vidas : MonoBehaviour
     public SiguienteNivel siguienteNivel;
     public SonidosFinPartida sonidosFinPartida;
 
+    public GameObject botonPausa;
+
     void Start()
     {
         textoVidas.text = "X " + Vidas.vidas;
@@ -36,6 +38,7 @@ public class Vidas : MonoBehaviour
             gameOver.SetActive(true);
             pelota.DetenerMovimiento();
             barra.enabled = false;
+            botonPausa.SetActive(false);
 
             siguienteNivel.nivelCargar = "Portada";
             siguienteNivel.ActivarCarga();

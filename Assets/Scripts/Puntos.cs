@@ -7,27 +7,29 @@ public class Puntos : MonoBehaviour
 {
     public static int puntos = 0;
     public Text textoPunto;
-
     public GameObject nivelCompletado;
     public GameObject juegoCompletado;
-
     public SiguienteNivel siguienteNivel;
-
     public Pelota pelota;
     public Barra barra;
-
     public Transform contenedorBloques;
     public SonidosFinPartida sonidosFinPartida;
+    int puntosReinicio;
 
-    // Start is called before the first frame update
     void Start()
     {
         ActualizarMarcadorPuntos();
+        puntosReinicio = puntos;
     }
 
     void ActualizarMarcadorPuntos()
     {
         textoPunto.text = "Puntos: " + Puntos.puntos;
+    }
+
+    public void PuntosReinicio()
+    {
+        puntos = puntosReinicio;
     }
 
     public void GanarPunto()
