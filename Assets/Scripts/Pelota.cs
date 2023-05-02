@@ -12,19 +12,9 @@ public class Pelota : MonoBehaviour
 
     public ElementoInteractivo pantalla;
 
-    //public float velociInstantanea;
-    //public float velociInstantanea1;
-    //public float posicionCompararX;
-    //public float posicionCompararY;
-    //float retraso = 3;
-    //public float posicionComparar1X;
-    //public float posicionComparar1Y;
-
-
     void Start()//guarda la posicion incial para resetear
     {
         posicionInicial = transform.position;
-
     }
 
     public void Reset() {//resetea la posicion inicial del objeto
@@ -33,8 +23,6 @@ public class Pelota : MonoBehaviour
         enJuego = false;
         DetenerMovimiento();
     }
-
-    // Start is called before the first frame update
 
     public void DetenerMovimiento() {
         rig.isKinematic = true;

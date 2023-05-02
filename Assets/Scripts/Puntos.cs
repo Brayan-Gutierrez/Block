@@ -32,16 +32,15 @@ public class Puntos : MonoBehaviour
         puntos = puntosReinicio;
     }
 
-    public void GanarPunto()
+    public void ConetoHijos()
     {
-        Puntos.puntos++;
-        ActualizarMarcadorPuntos();
-
-        if (contenedorBloques.childCount <= 0 ){
+        if (contenedorBloques.childCount <= 0)
+        {
             pelota.DetenerMovimiento();
             barra.enabled = false;
 
-            if (siguienteNivel.EsUltimoNivel()){
+            if (siguienteNivel.EsUltimoNivel())
+            {
 
                 juegoCompletado.SetActive(true);
             }
@@ -51,9 +50,16 @@ public class Puntos : MonoBehaviour
             }
 
             sonidosFinPartida.NivelCompletado();
-            
+
             siguienteNivel.ActivarCarga();
         }
+    }
+
+    public void GanarPunto()
+    {
+        Puntos.puntos++;
+        ActualizarMarcadorPuntos();
+        ConetoHijos();
     }
     
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EmpezarPartida : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class EmpezarPartida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") || pantalla.pulsado)
+        if (Input.GetButtonDown("Fire1") || pantalla.pulsado)
         {
             Puntos.puntos = 0;
             Vidas.vidas = 3;
-            Application.LoadLevel("Level01");
+            SceneManager.LoadScene("Level01");
+
             Time.timeScale = 1;
         }
     }

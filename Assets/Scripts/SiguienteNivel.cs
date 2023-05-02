@@ -2,6 +2,7 @@ using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SiguienteNivel : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class SiguienteNivel : MonoBehaviour
         {
             Vidas.vidas++;
         }
-        Application.LoadLevel(nivelCargar);
+        SceneManager.LoadScene(nivelCargar);
     }
 
     public bool EsUltimoNivel(){

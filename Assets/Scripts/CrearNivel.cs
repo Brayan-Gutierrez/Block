@@ -6,7 +6,8 @@ public class CrearNivel : MonoBehaviour
 {
     public GameObject PreBloque;
     public GameObject parentObject;
-    //Vector3 posicionInicial;
+    public GameObject PrePoder;
+   
     public Material[] myMaterials = new Material[5];
     // Para crear bloques random
     
@@ -16,12 +17,9 @@ public class CrearNivel : MonoBehaviour
 
             Instantiate(PreBloque,transform.position, Quaternion.identity,parentObject.transform);
             PreBloque.GetComponent<Renderer>().material = myMaterials[Random.Range(0,myMaterials.Length)];
-            //posicionInicial.Set(Random.Range(-14.5f,14.5f),Random.Range(-5f,8.5f),0);
-            //PreBloque.transform.position=posicionInicial;
             
-            //transform.position=posicionInicial;
         }
-        
+        Instantiate(PrePoder, transform.position, Quaternion.AngleAxis(90, Vector3.forward),  parentObject.transform);
     }
 
 }

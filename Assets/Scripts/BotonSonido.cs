@@ -6,26 +6,21 @@ using UnityEngine.EventSystems;
 public class BotonSonido : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public GameObject imgX;
-    public bool pulsado=false;
+    public static bool pulsado = false;
     public GameObject gestor;
     public AudioSource musica;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         gestor = GameObject.Find("GestorDelJuego");
         musica = (AudioSource)gestor.GetComponent("AudioSource");
         //musica.enabled = true;
+        pulsado = !pulsado;
+        ActiDesacSonido();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void OnPointerDown(PointerEventData eventData)
+    public void ActiDesacSonido()
     {
         imgX.SetActive(!pulsado);
 
@@ -47,6 +42,11 @@ public class BotonSonido : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
         pulsado = !pulsado;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        ActiDesacSonido();
 
     }
     public void OnPointerUp(PointerEventData eventData)
