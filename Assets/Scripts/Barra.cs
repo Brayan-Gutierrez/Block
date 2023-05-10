@@ -5,15 +5,13 @@ using UnityEngine;
 public class Barra : MonoBehaviour
 {
     public float velocidad = 20.0f;
-
     Vector3 posicionInicial;
-
     public ElementoInteractivo botonIzquierdo;
     public ElementoInteractivo botonDerecho;
     float direccion;
-
-    public int desplazamiento=14;
+    public int desplazamiento = 14;
     
+
     void Start()
     {
         posicionInicial = transform.position;
@@ -21,7 +19,8 @@ public class Barra : MonoBehaviour
 
     public void  Reset() 
     {
-        transform.position = posicionInicial;    
+        transform.position = posicionInicial;
+        //transform.localScale;
     }
 
     void Update()

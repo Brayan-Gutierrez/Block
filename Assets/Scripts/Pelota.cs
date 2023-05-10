@@ -9,7 +9,6 @@ public class Pelota : MonoBehaviour
     bool enJuego = false;
     Vector3 posicionInicial;
     public Transform barra;
-
     public ElementoInteractivo pantalla;
 
     void Start()//guarda la posicion incial para resetear

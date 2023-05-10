@@ -13,6 +13,7 @@ public class PoderBarra : MonoBehaviour
     public GameObject barra;
     public Barra barraScript;
     public GameObject pelotaTrans;
+    static int i;
    
     void Start()
     {
@@ -44,26 +45,35 @@ public class PoderBarra : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Suelo"))
+        if ((collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Suelo")) && i <= 7)
         {
             if (collider.gameObject.CompareTag("Player"))
             {
                 if(pelotaTrans.transform.parent)
                 {
                     pelotaTrans.transform.SetParent(null);
+                    AumentoBarra();
+                    pelotaTrans.transform.SetParent(barra.transform);
                 }
-                barra.transform.localScale = barra.transform.localScale + new Vector3(2, 0, 0);
-                barraScript.desplazamiento = barraScript.desplazamiento - 1;
-                pelotaTrans.transform.SetParent(barra.transform);
-                
+                else
+                {
+                    AumentoBarra();
+                }
+
             }
 
             Destroy(gameObject);
             transform.SetParent(null);
             puntos.ConetoHijos();
-
+            i++;
         }
 
+    }
+
+    public void AumentoBarra()
+    {
+        barra.transform.localScale = barra.transform.localScale + new Vector3(2, 0, 0);
+        barraScript.desplazamiento--;
     }
 
 }
